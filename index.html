@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Additional inline styles can be added for quick styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+        main {
+            padding: 20px;
+        }
+        .upload-section {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .upload-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .upload-section form {
+            text-align: center;
+        }
+        .upload-section input[type=file] {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: none;
+            width: calc(100% - 120px);
+        }
+        .upload-section button[type=submit] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .upload-section button[type=submit]:hover {
+            background-color: #0056b3;
+        }
+        .result-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .result-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .result-section img {
+            max-width: 100%;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .result-section p {
+            font-size: 1.2em;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Image Classification Model</h1>
+        <p>Detect and classify images with our state-of-the-art model</p>
+    </header>
+
+    <main>
+        <section class="upload-section">
+            <h2>Upload an Image</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="imageUpload" name="file" accept="image/*">
+                <button type="submit">Classify Image</button>
+            </form>
+        </section>
+
+        <section class="result-section" id="resultSection">
+            <!-- Results will be dynamically added here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ayushman Ranjan. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
